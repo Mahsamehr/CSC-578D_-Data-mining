@@ -21,18 +21,11 @@ NUM_BATCH = 500
 BATCH_SIZE = 256  
 PRINT_INTERVAL = 20
 
-# A simple framework to work with pytorch
+
 class Classifier(nn.Module):
     def __init__(self):
         super(Classifier, self).__init__()
-        # This architecture will not work. 
-        # Explain this is true for part c, and
-        # design something that will work for part a
-        ##############################
-        #
-        #  put your code for the architecture here
-        #
-        ##############################
+     
       
         self.l1 = nn.Linear(2,2048)#features=2, neurons of hidden layers = 100
         self.l2 = nn.Linear(2048,1024)
@@ -105,7 +98,7 @@ def plot_percent_correct(data_in, percent_corr):
     plt.show()
     fig1.savefig('percent correct.png')
 
-# Here's the spot where you'll do your batches of optimization
+# optimization
 
 model = Classifier()
 o = torch.optim.SGD(model.parameters(), lr = 0.001)  #this is optimizer
